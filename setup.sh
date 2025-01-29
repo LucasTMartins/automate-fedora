@@ -1,5 +1,9 @@
 #!/bin/bash
 
+asdf_dir="$HOME/.asdf"
+asdf_nodejs_dir="$HOME/.asdf/plugins/nodejs"
+asdf_java_dir="$HOME/.asdf/plugins/java"
+
 # --------------- CORES PARA OUTPUT ---------------
 red='\033[0;31m'
 green='\033[0;32m'
@@ -41,7 +45,7 @@ sudo dnf group install -y "c-development"
 check_status "instalar ferramentas de desenvolvimento"
 # ---------------
 
-# --------------- APPS DE TERMINAL ---------------
+# --------------- INSTALAR APPS DE TERMINAL ---------------
 print_status "instalando apps de terminal..."
 sudo dnf install -y \
     micro \
@@ -54,7 +58,7 @@ sudo dnf install -y \
 check_status "instalar apps de terminal"
 # ---------------
 
-# --------------- APPS DE SISTEMA ---------------
+# --------------- INSTALAR APPS DE SISTEMA ---------------
 print_status "instalando apps de sistema..."
 sudo dnf install -y \
     qlipper \
@@ -88,6 +92,36 @@ sudo dnf install -y code
 check_status "instalar vscode"
 # ---------------
 
+# --------------- INSTALAR ASDF MANAGER ---------------
+if [[ ! -d $asdf_dir ]]; then 
+    print_status "instalando asdf manager..."
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
+    check_status "instalar asdf manager"
+
+    # adicionando comandos ao .bashrc
+    cat >> ~/.bashrc << EOF
+
+# asdf
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+EOF
+
+    source ~/.bashrc
+fi
+
+if [[ ! -d $asdf_nodejs_dir ]]; then 
+    print_status "instalando plugin de nodejs do asdf..."
+    asdf plugin-add nodejs
+    check_status "instalar plugin de nodejs do asdf"
+fi
+
+if [[ ! -d $asdf_java_dir ]]; then 
+    print_status "instalando plugin de java do asdf..."
+    asdf plugin-add java
+    check_status "instalar plugin de java do asdf"
+fi
+# ---------------
+
 # --------------- INSTALAR FLATPAK ---------------
 print_status "configurando flatpak..."
 sudo dnf install -y flatpak
@@ -115,7 +149,7 @@ mkdir -p ~/workspace ~/gitclones
 check_status "criar diretórios"
 # ---------------
 
-# --------------- EXPORTANDO VARIÁVEIS E FUNÇÕES PARA CONFIGURAÇÕES ADICIONAIS ---------------
+# --------------- EXPORTAR VARIÁVEIS E FUNÇÕES PARA CONFIGURAÇÕES ADICIONAIS ---------------
 export red green nc
 export -f \
         print_status \
