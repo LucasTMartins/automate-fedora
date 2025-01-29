@@ -104,7 +104,8 @@ flatpak install -y flathub \
     md.obsidian.obsidian \
     org.telegram.desktop \
     com.anydesk.anydesk \
-    com.bitwarden.desktop
+    com.bitwarden.desktop \
+    io.freetubeapp.FreeTube
 check_status "instalar apps flatpak"
 # ---------------
 
