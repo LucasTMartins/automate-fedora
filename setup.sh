@@ -53,8 +53,7 @@ sudo dnf install -y \
     ranger \
     bat \
     btop \
-    tmux \
-    chromium
+    tmux
 check_status "instalar apps de terminal"
 # ---------------
 
@@ -65,7 +64,8 @@ sudo dnf install -y \
     flameshot \
     filezilla \
     vlc \
-    timeshift
+    timeshift \
+    chromium
 check_status "instalar apps de sistema"
 # ---------------
 
