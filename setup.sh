@@ -53,7 +53,8 @@ sudo dnf install -y \
     ranger \
     bat \
     btop \
-    tmux
+    tmux \
+    python3-devel
 check_status "instalar apps de terminal"
 # ---------------
 
