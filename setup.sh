@@ -66,7 +66,8 @@ sudo dnf install -y \
     filezilla \
     vlc \
     timeshift \
-    chromium
+    chromium \
+    meld
 check_status "instalar apps de sistema"
 # ---------------
 
