@@ -93,6 +93,12 @@ sudo dnf install -y code
 check_status "instalar vscode"
 # ---------------
 
+# --------------- INSTALAR DISTROBOX ---------------
+print_status "instalando distrobox..."
+sudo dnf install -y distrobox
+check_status "instalar distrobox"
+# ---------------
+
 # --------------- INSTALAR ASDF MANAGER ---------------
 if [[ ! -d $asdf_dir ]]; then 
     print_status "instalando asdf manager..."
