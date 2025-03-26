@@ -54,7 +54,8 @@ sudo dnf install -y \
     bat \
     btop \
     tmux \
-    python3-devel
+    python3-devel \
+    zsh
 check_status "instalar apps de terminal"
 # ---------------
 
@@ -98,6 +99,12 @@ check_status "instalar vscode"
 print_status "instalando distrobox..."
 sudo dnf install -y distrobox
 check_status "instalar distrobox"
+# ---------------
+
+# --------------- INSTALAR OH-MY-ZSH! ---------------
+print_status "instalando Oh-my-zsh!..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+check_status "instalar Oh-my-zsh!"
 # ---------------
 
 # --------------- INSTALAR ASDF MANAGER ---------------
