@@ -82,7 +82,7 @@ check_status "instalar docker"
 
 # --------------- ADICIONAR USUÁRIO AO GRUPO DOCKER ---------------
 print_status "adicionando usuário ao grupo docker..."
-sudo usermod -ag docker $user
+sudo usermod -aG docker $USER
 check_status "adicionar usuário ao grupo docker"
 # ---------------
 
