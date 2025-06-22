@@ -146,14 +146,13 @@ check_status "configurar flatpak"
 # --------------- INSTALAR APPS FLATPAK ---------------
 print_status "instalando apps flatpak..."
 flatpak install -y flathub \
-    com.github.tchx84.flatseal \
-    com.obsproject.studio \
-    eu.scarpetta.pdfmixtool \
-    md.obsidian.obsidian \
+    com.github.tchx84.Flatseal \
+    com.obsproject.Studio \
+    eu.scarpetta.PDFMixTool \
+    md.obsidian.Obsidian \
     org.telegram.desktop \
-    com.anydesk.anydesk \
-    com.bitwarden.desktop \
-    io.freetubeapp.FreeTube
+    com.rustdesk.RustDesk \
+    com.bitwarden.desktop
 check_status "instalar apps flatpak"
 # ---------------
 

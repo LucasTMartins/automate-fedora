@@ -11,8 +11,7 @@ check_status "instalar apps de sistema"
 # --------------- INSTALAR APPS FLATPAK ---------------
 print_status "instalando apps flatpak..."
 flatpak install -y flathub \
-    com.discordapp.discord \
-    com.heroicgameslauncher.hgl \
+    com.discordapp.Discord \
     com.parsecgaming.parsec
 check_status "instalar apps flatpak"
 # ---------------
