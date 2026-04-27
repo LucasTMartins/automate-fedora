@@ -122,7 +122,7 @@ setup_containerization() {
 
   # Podman — container engine rootless, base de tudo
   print_status "Instalando Podman (container engine rootless)..."
-  sudo dnf install -y podman podman-compose podman-docker
+  sudo dnf install -y podman podman-compose
   check_status "instalar Podman"
 
   # Distrobox — rodar outras distros sem sudo
@@ -250,8 +250,8 @@ install_flatpak_tools() {
     org.gnome.FontManager
   flatpak install -y flathub com.rustdesk.RustDesk
   flatpak install -y flathub io.dbeaver.DBeaverCommunity
-  flatpak install flathub org.qbittorrent.qBittorrent
-  flatpak install flathub com.valvesoftware.Steam
+  flatpak install -y flathub org.qbittorrent.qBittorrent
+  flatpak install -y flathub com.valvesoftware.Steam
   check_status "instalar utilitários Flatpak essenciais"
 }
 
@@ -323,7 +323,6 @@ main() {
   install_flatpak_media
   install_flatpak_tools
   setup_native_apps
-  setup_dev_tools
   setup_directories
 
   print_header "INSTALAÇÃO CONCLUÍDA"
