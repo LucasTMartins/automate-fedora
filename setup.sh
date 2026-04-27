@@ -108,7 +108,7 @@ setup_terminal_tools() {
     eza \
     zoxide \
     starship \
-    htop \
+    btop \
     ncdu \
     unzip zip p7zip
   check_status "instalar ferramentas de terminal"
