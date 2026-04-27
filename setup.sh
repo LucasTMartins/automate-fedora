@@ -252,6 +252,9 @@ install_flatpak_tools() {
   flatpak install -y flathub io.dbeaver.DBeaverCommunity
   flatpak install -y flathub org.qbittorrent.qBittorrent
   flatpak install -y flathub com.valvesoftware.Steam
+  flatpak install -y flathub com.usebruno.Bruno
+  flatpak install -y flathub io.github.kolunmi.Bazaar
+  flatpak install -y flathub com.ranfdev.DistroShelf
   check_status "instalar utilitários Flatpak essenciais"
 }
 
@@ -267,7 +270,8 @@ setup_native_apps() {
   print_status "Instalando utilitários de sistema..."
   sudo dnf install -y \
     flameshot \
-    qlipper
+    qlipper \
+    ptyxis
   check_status "instalar utilitários de sistema"
 
   # VSCode — nativo por causa de integração com Podman/Docker, SSH, extensões
