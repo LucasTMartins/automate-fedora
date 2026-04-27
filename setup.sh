@@ -121,12 +121,12 @@ setup_containerization() {
   print_header "CONTAINERIZAÇÃO"
 
   # Podman — container engine rootless, base de tudo
-  print_status "Instalando Podman (container engine rootless)..."
+  print_status "Instalando Podman..."
   sudo dnf install -y podman podman-compose
   check_status "instalar Podman"
 
   # Distrobox — rodar outras distros sem sudo
-  if ask "Deseja instalar Distrobox? (recomendado para dev sem permissões de admin)"; then
+  if ask "Deseja instalar Distrobox?"; then
     print_status "Instalando Distrobox..."
     sudo dnf install -y distrobox
     check_status "instalar Distrobox"
@@ -134,7 +134,7 @@ setup_containerization() {
   fi
 
   # Homebrew (Linuxbrew) — instalar apps de userspace sem sudo
-  if ask "Deseja instalar o Homebrew? (gerenciador de pacotes sem root, essencial no fluxo Bluefin)"; then
+  if ask "Deseja instalar o Homebrew?"; then
     print_status "Instalando Homebrew..."
     NONINTERACTIVE=1 /bin/bash -c \
       "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -150,7 +150,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
   fi
 
   # Docker — opcional, pois Podman já cobre a maioria dos casos
-  if ask "Deseja instalar o Docker? (Podman já está instalado e cobre a maioria dos casos)"; then
+  if ask "Deseja instalar o Docker?"; then
     print_status "Instalando Docker..."
     sudo dnf config-manager addrepo \
       --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
@@ -173,7 +173,7 @@ setup_mise() {
     return
   fi
 
-  print_status "Instalando Mise (substituto moderno do asdf)..."
+  print_status "Instalando Mise..."
   curl https://mise.run | sh
   check_status "instalar Mise"
 
