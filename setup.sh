@@ -212,7 +212,7 @@ install_flatpak_browsers() {
 
   print_info "Navegadores rodam muito bem como Flatpak — sandbox nativa de segurança."
 
-  flatpak install -y flathub org.mozilla.firefox
+  #flatpak install -y flathub org.mozilla.firefox
   flatpak install -y flathub org.chromium.Chromium
   flatpak install -y flathub com.brave.Browser
 }
