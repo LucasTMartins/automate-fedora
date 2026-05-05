@@ -255,6 +255,7 @@ install_flatpak_tools() {
   flatpak install -y flathub com.usebruno.Bruno
   flatpak install -y flathub io.github.kolunmi.Bazaar
   flatpak install -y flathub com.ranfdev.DistroShelf
+  flatpak install -y flathub sh.loft.devpod
   check_status "instalar utilitários Flatpak essenciais"
 }
 
